@@ -9,7 +9,7 @@ const Root = () => {
             <div className="bg-[#5356FF]">
                 <Navbar></Navbar>
             </div>
-            <div className=" h-[calc(100vh-467px)] lg:h-[calc(100vh-340px)] md:h-[calc(100vh-419px)]">
+            <div className=" ">
                <Outlet></Outlet>
             </div>
             <div>
