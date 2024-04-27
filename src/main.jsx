@@ -15,6 +15,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Error from './pages/Error/Error';
 import ContextProvider from './routes/ContextProvider';
+import TouristSpotDetail from './components/TouristSpotDetail';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("https://wilds-tour-server.vercel.app/touristSpots")
+      },
+      {
+        path: "/touristSpotDetail/:id",
+        element:<TouristSpotDetail></TouristSpotDetail>,
+        // loader: ({params})=> fetch(`https://wilds-tour-server.vercel.app/touristSpots/${params.id}`)
+        loader: ()=> fetch("https://wilds-tour-server.vercel.app/touristSpots")
       },
       {
         path: "/allSpots",

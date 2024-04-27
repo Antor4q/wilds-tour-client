@@ -1,8 +1,9 @@
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom";
 
 const TouristsSpots = ({spot}) => {
 
-    const {image,tourists_spot_name,shortDescription,average_cost} = spot;
+    const {image,tourists_spot_name,shortDescription,average_cost,_id} = spot;
 
     return (
         <div>
@@ -13,7 +14,7 @@ const TouristsSpots = ({spot}) => {
                     <p>{shortDescription}</p>
                     <p>Average cost {average_cost}</p>
                     <div className="card-actions ">
-                    <button className="btn btn-primary">View Details</button>
+                    <Link to={`/touristSpotDetail/${_id}`} className="btn btn-primary">View Details</Link>
                     </div>
                 </div>
                 </div>
