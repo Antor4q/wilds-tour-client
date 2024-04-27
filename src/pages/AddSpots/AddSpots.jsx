@@ -29,7 +29,7 @@ const AddSpots = () => {
         const newTouristSpot = { image, tourists_spot_name,  location,  shortDescription,  average_cost,  totalVisitorsPerYear, user_name, user_email, travel_time, seasonality, countryName}
 
 
-        fetch("http://localhost:4000/touristSpots",{
+        fetch("https://wilds-tour-server.vercel.app/touristSpots",{
             method: "POST",
             headers:{
                 "content-type" : "application/json"
@@ -37,7 +37,12 @@ const AddSpots = () => {
             body: JSON.stringify(newTouristSpot)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data.acknowledged === true){
+                alert("DAta add hoiche")
+            }
+            console.log(data)
+        })
     }
 
 
@@ -79,13 +84,13 @@ const AddSpots = () => {
                         <label className="label">
                             <span className="label-text">Average Cost</span>
                         </label>
-                        <input  type="number" placeholder="Average Cost" name="cost" className="input w-full input-bordered" required />
+                        <input  type="text" placeholder="Average Cost" name="cost" className="input w-full input-bordered" required />
                         </div>
                         <div className="w-full">
                         <label className="label">
                             <span className="label-text">Total Visitors</span>
                         </label>
-                        <input type="number" placeholder="Total Visitors" name="visitor" className="input w-full input-bordered" required />
+                        <input type="text" placeholder="Total Visitors" name="visitor" className="input w-full input-bordered" required />
                         </div>
                     </div>
                      <div className="flex gap-3 lg:mt-3">
@@ -114,7 +119,7 @@ const AddSpots = () => {
                         <label className="label">
                             <span className="label-text">Travel Time</span>
                         </label>
-                        <input  type="number" placeholder="Day" name="time" className="input w-full input-bordered" required />
+                        <input  type="text" placeholder="Day" name="time" className="input w-full input-bordered" required />
                         </div>
                        
                     </div>
