@@ -4,7 +4,7 @@ import pic1 from "../../public/pic3.jpg"
 
 const TouristsSpots = ({spot}) => {
 
-    const {image,tourists_spot_name,shortDescription,average_cost,_id,location} = spot;
+    const {tourists_spot_name,shortDescription,average_cost,_id,location} = spot;
 
     return (
         <div className="px-5 lg:px-0">

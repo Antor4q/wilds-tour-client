@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SingleSpot = ({spot}) => {
     const {_id,tourists_spot_name,average_cost,totalVisitorsPerYear,travel_time,seasonality} = spot
     return (
-        <div>
+        <div className="lg:px-0 px-3">
            
             <div className="card  bg-base-100 border hover:border-none hover:shadow-xl">
             <figure><img src={pic1} className="transition duration-500 hover:scale-110 " alt="Shoes" /></figure>

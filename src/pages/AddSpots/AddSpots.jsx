@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../routes/ContextProvider";
 
 const AddSpots = () => {
 
-    const [seasonality,setSeason] = useState("");
-    const [countryName,setCountry] = useState("");
-    console.log(seasonality, countryName)
-    const handleCountry = e => {
-        setCountry(e.target.value)
-    }
-    const handleSeason = e => {
-        setSeason(e.target.value)
-    }
+  
+    const {user} = useContext(AuthContext)
+    // const {displayName,email} = user
+    const name = user?.displayName || ""
+    const email = user?.email || ""
+    console.log(user)
+   
+  
 
     const handleAddSpot = (e) => {
        
@@ -23,8 +23,10 @@ const AddSpots = () => {
         const shortDescription = form.description.value;
         const average_cost = form.cost.value;
         const totalVisitorsPerYear = form.visitor.value;
-        const user_name = form.name.value;
-        const user_email = form.email.value;
+        const seasonality = form.season.value
+        const countryName = form.country.value;
+        const user_name = name
+        const user_email = email
         const travel_time = form.time.value;
         const newTouristSpot = { image, tourists_spot_name,  location,  shortDescription,  average_cost,  totalVisitorsPerYear, user_name, user_email, travel_time, seasonality, countryName}
 
@@ -47,11 +49,11 @@ const AddSpots = () => {
 
 
     return (
-        <div className=" lg:max-w-[1240px] mx-auto">
-            <div className="lg:my-10 lg:px-24 bg-[#67C6E3] lg:py-6 ">
+        <div className=" lg:max-w-[1240px] mx-auto md:px-5 px-3">
+            <div className="lg:my-10 lg:px-24 md:my-8 my-5 px-3 py-2 md:shadow-xl md:px-16 bg-[#67C6E3] md:py-4 lg:py-6 ">
                 
                 <form onSubmit={handleAddSpot}>
-                    <div className="flex gap-3 ">
+                    <div className="flex gap-1 lg:gap-3 ">
                         <div className="w-full">
                         <label className="label">
                             <span className="label-text">Image URL</span>
@@ -65,7 +67,7 @@ const AddSpots = () => {
                         <input type="text" placeholder="Tourist Spot Name" name="spotName" className="input w-full input-bordered" required />
                         </div>
                     </div>
-                    <div className="flex gap-3 ">
+                    <div className="flex gap-1 lg:gap-3 ">
                         <div className="w-full">
                         <label className="label">
                             <span className="label-text">Location</span>
@@ -79,7 +81,7 @@ const AddSpots = () => {
                         <input type="text" placeholder="Short Description" name="description" className="input w-full input-bordered" required />
                         </div>
                     </div>
-                    <div className="flex gap-3 ">
+                    <div className="flex lg:gap-3 gap-1 ">
                         <div className="w-full">
                         <label className="label">
                             <span className="label-text">Average Cost</span>
@@ -93,7 +95,21 @@ const AddSpots = () => {
                         <input type="text" placeholder="Total Visitors" name="visitor" className="input w-full input-bordered" required />
                         </div>
                     </div>
-                     <div className="flex gap-3 lg:mt-3">
+                    <div className="lg:flex gap-3 ">
+                        <div className="w-full">
+                        <label className="label">
+                            <span className="label-text">Country Name</span>
+                        </label>
+                        <input  type="text" placeholder="Country Name" name="country" className="input w-full input-bordered" required />
+                        </div>
+                        <div className="w-full">
+                        <label className="label">
+                            <span className="label-text">Seasonality</span>
+                        </label>
+                        <input type="text" placeholder="Season" name="season" className="input w-full input-bordered" required />
+                        </div>
+                    </div>
+                     {/* <div className="flex gap-3 lg:mt-3">
                         <div className="w-full ">
                             <select onChange={handleCountry} value={countryName} className="select select-bordered w-full  ">
                             <option disabled selected value={""}>Select Country</option>
@@ -113,7 +129,7 @@ const AddSpots = () => {
                             </select>
                         </div>
                        
-                     </div>
+                     </div> */}
                     <div >
                         <div className="w-full">
                         <label className="label">
@@ -128,7 +144,7 @@ const AddSpots = () => {
                         <label className="label">
                             <span className="label-text ">Your Name</span>
                         </label>
-                        <input  type="text" placeholder="Your Name" name="name" className="input w-full input-bordered" required />
+                        <input  type="text" placeholder="Your Name" disabled defaultValue={name} name="name" className="input w-full input-bordered" required />
                         </div>
                        
                     </div>
@@ -137,7 +153,7 @@ const AddSpots = () => {
                         <label className="label">
                             <span className="label-text">Your Email</span>
                         </label>
-                        <input  type="email" placeholder="Your Email" name="email" className="input w-full input-bordered" required />
+                        <input  type="email" placeholder="Your Email" disabled defaultValue={email} name="email" className="input w-full input-bordered" required />
                         </div>
                        
                     </div>

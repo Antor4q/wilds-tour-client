@@ -21,7 +21,7 @@ const AllSpots = () => {
         }
     }
     return (
-        <div className=" lg:max-w-[1240px] mx-auto lg:my-16 my-6">
+        <div className=" lg:max-w-[1240px] mx-auto lg:my-16 lg:px-0 px-3 my-6">
             <h2 className="lg:text-2xl font-bold text-xl  text-center">Explore Our All Tourists Spots</h2>
             <div className="dropdown mb-2 ">
             <div tabIndex={0} role="button" className="btn m-1 bg-[#5356FF] text-white px-6">Sort By</div>
@@ -31,7 +31,7 @@ const AllSpots = () => {
                 
             </ul>
             </div>
-           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
+           <div className="grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
            {
                 spots.map(spot => <SingleSpot key={spot._id} spot={spot}></SingleSpot>)
             }
