@@ -6,8 +6,8 @@ const TouristsSpots = ({spot}) => {
     const {image,tourists_spot_name,shortDescription,average_cost,_id} = spot;
 
     return (
-        <div>
-            <div className="card card-compact  bg-base-100 shadow-xl">
+        <div className="px-5 lg:px-0">
+            <div className="card card-compact  bg-base-100 hover:bg-[#5356FF] border hover:shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{tourists_spot_name}</h2>
