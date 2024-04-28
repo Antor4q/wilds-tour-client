@@ -31,12 +31,13 @@ const router = createBrowserRouter([
       {
         path: "/touristSpotDetail/:id",
         element:<TouristSpotDetail></TouristSpotDetail>,
-        // loader: ({params})=> fetch(`https://wilds-tour-server.vercel.app/touristSpots/${params.id}`)
+      
         loader: ()=> fetch("https://wilds-tour-server.vercel.app/touristSpots")
       },
       {
         path: "/allSpots",
-        element: <AllSpots></AllSpots>
+        element: <AllSpots></AllSpots>,
+        loader: ()=> fetch("https://wilds-tour-server.vercel.app/touristSpots")
       },
       {
         path: "/addSpots",
