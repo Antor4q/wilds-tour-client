@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../routes/ContextProvider";
 import Update from "./Update";
-// import MySpot from "./MySpot";
+import Swal from "sweetalert2";
 
 
 const MyList = () => {
@@ -16,8 +16,38 @@ const MyList = () => {
         })
     },[user])
 
-
-  
+    const handleDelete = id => {
+        console.log(id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://wilds-tour-server.vercel.app/myList/${id}`,{
+                    method: "DELETE"
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount > 0){
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "This tourist spot has been deleted.",
+                            icon: "success"
+                        });
+                        const remaining = spots.filter(spot=> spot._id !== id)
+                        setSpots(remaining)
+                    }
+                })
+            
+            } 
+    })
+    }
 
     return (
         <div className="lg:h-[calc(100vh-340px)] h-[calc(100vh-549px)] lg:max-w-[1240px] mx-auto">
@@ -58,7 +88,7 @@ const MyList = () => {
                                 </div>
                             </div>
                             </dialog>
-                        <button className="bg-red-500 join-item">X</button>
+                        <button onClick={()=>handleDelete(spot._id)} className="bg-red-500 join-item">X</button>
                         
                         </div>
                     </td>
