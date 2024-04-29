@@ -2,6 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../routes/ContextProvider";
 import Update from "./Update";
 import Swal from "sweetalert2";
+import { MdDelete, MdOutlineRemoveRedEye } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const MyList = () => {
@@ -50,9 +53,9 @@ const MyList = () => {
     }
 
     return (
-        <div className="lg:max-w-[1240px] max-w-[390px] px-3  mx-auto">
-           <div className="">
-           <div className="overflow-x-auto w-full lg:w-2/3 mx-auto mt-10 lg:mt-20">
+        <div className="lg:max-w-[1240px]  max-w-[390px] px-3  mx-auto">
+           <div className="lg:py-10">
+           <div className="overflow-x-auto w-full lg:w-2/3 lg:p-10 mx-auto mt-10 bg-gray-200 lg:mt-20">
            <table className="table">
             {/* head */}
             <thead>
@@ -68,14 +71,14 @@ const MyList = () => {
             {/* row 1 */}
               {
                 spots.map((spot,ind) =>
-                <tr key={spot._id}>
+                <tr  key={spot._id}>
                     <th>{ind + 1}</th>
                     <td>{spot.tourists_spot_name}</td>
                     <td>{spot.average_cost}</td>
                     <td>{spot.travel_time}</td>
                     <td>
                       <div className="join gap-2 join-vertical">
-                        <button className="bg-yellow-500 join-item" onClick={()=>document.getElementById('my_modal_3').showModal()}>Edit</button>
+                        <button className="bg-yellow-500 join-item px-3 py-1 text-white" onClick={()=>document.getElementById('my_modal_3').showModal()}><FaRegEdit /></button>
                         <dialog id="my_modal_3" className="modal">
                             <div className="modal-box">
                                 <form method="dialog">
@@ -88,7 +91,8 @@ const MyList = () => {
                                 </div>
                             </div>
                             </dialog>
-                        <button onClick={()=>handleDelete(spot._id)} className="bg-red-500 join-item">X</button>
+                            <Link to={`/touristSpotDetail/${spot._id}`} className="bg-green-500 px-3 text-white py-1"><MdOutlineRemoveRedEye /></Link>
+                        <button onClick={()=>handleDelete(spot._id)} className="bg-red-500 px-3 py-1 text-white  join-item"><MdDelete /></button>
                         
                         </div>
                     </td>

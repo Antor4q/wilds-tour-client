@@ -14,7 +14,7 @@ const Root = () => {
             <div className="bg-[#5356FF]">
                 <Navbar></Navbar>
             </div>
-            <div className=" ">
+            <div className="">
                <Outlet></Outlet>
             </div>
             <div>

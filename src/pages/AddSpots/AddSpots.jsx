@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../routes/ContextProvider";
+import Swal from "sweetalert2";
 
 const AddSpots = () => {
 
@@ -41,7 +42,14 @@ const AddSpots = () => {
         .then(res => res.json())
         .then(data => {
             if(data.acknowledged === true){
-                alert("DAta add hoiche")
+                form.reset()
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You have added this tourist Spot",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             }
             console.log(data)
         })
@@ -49,8 +57,8 @@ const AddSpots = () => {
 
 
     return (
-        <div className=" lg:max-w-[1240px] mx-auto md:px-5 px-3">
-            <div className="lg:my-10 lg:px-24 md:my-8 my-5 px-3 py-2 md:shadow-xl md:px-16 bg-gray-200 md:py-4 lg:py-6 ">
+        <div className=" lg:max-w-[1240px] lg:h-[calc(100vh-376px)] mx-auto md:px-5 px-3">
+            <div className="lg:my-10 lg:px-24 md:my-8 my-5 px-3 py-2 hover:shadow-xl  md:px-16 bg-gray-200 md:py-4 lg:py-6 ">
                 
                 <form onSubmit={handleAddSpot}>
                     <div className="flex gap-1 lg:gap-3 ">

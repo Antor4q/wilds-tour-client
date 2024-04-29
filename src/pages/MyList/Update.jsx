@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import Swal from "sweetalert2";
 const Update = ({spot}) => {
 
     const handleUpdate = e => {
@@ -26,7 +27,15 @@ const Update = ({spot}) => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            alert("data update hoye geche re")
+          
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You have updated this",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+           
         })
     }
 

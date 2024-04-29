@@ -1,13 +1,14 @@
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom";
-
+import { Fade } from "react-awesome-reveal";
 
 const TouristsSpots = ({spot}) => {
 
     const {tourists_spot_name,image,shortDescription,average_cost,_id,location} = spot;
 
     return (
-        <div className="px-5 lg:px-0">
+       <Fade direction="up" delay={100} duration={1000}>
+             <div className="px-5 lg:px-0">
             <div className="card card-compact lg:h-[480px] rounded-xl  bg-base-100  border hover:shadow-xl">
                <div className="relative">
                <figure ><img src={image} className="rounded-t-xl lg:h-[265px] w-full transition duration-200 hover:scale-110" alt="Shoes" />
@@ -26,6 +27,7 @@ const TouristsSpots = ({spot}) => {
                 </div>
                 </div>
         </div>
+       </Fade>
     );
 };
 

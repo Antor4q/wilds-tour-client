@@ -1,4 +1,5 @@
 
+
 import pic1 from "../../public/pic1.jpg"
 import pic2 from "../../public/pic2.jpg"
 import pic3 from "../../public/pic3.jpg"
@@ -13,16 +14,18 @@ const Destinations = () => {
           
              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
             
-            <a  href="#"
-                className="group  relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                <img src={pic1} loading="lazy" alt="Photo by Minh Pham" className="absolute inset-0 h-full w-full object-cover  object-center transition duration-200 group-hover:scale-110" />
 
-                <div
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                </div>
+				<a  href="#"
+						className="group  relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
+						<img src={pic1} loading="lazy" alt="Photo by Minh Pham" className="absolute inset-0 h-full w-full object-cover  object-center transition duration-200 group-hover:scale-110" />
 
-                <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">  Ha Long Bay</span>
-            </a>
+						<div
+							className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+						</div>
+
+						<span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">  Ha Long Bay</span>
+				</a>
+		      
            
 
             

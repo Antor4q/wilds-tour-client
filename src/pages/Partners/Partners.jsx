@@ -11,8 +11,8 @@ import pic8 from "../../../public/part8.png"
 import pic9 from "../../../public/part9.png"
 const Partners = () => {
     return (
-        <div className="bg-gray-200 lg:py-6">
-            <h2 className="lg:text-3xl text-xl text-center lg:my-10 my-5 font-bold">Our Partners</h2>
+        <div className="bg-gray-200 lg:py-6 py-4">
+            <h2 className="lg:text-3xl text-xl text-center lg:my-10 my-5 text-black font-bold">Our Partners</h2>
             <div >
                 <Marquee pauseOnHover={true}>
                 <img src={pic1} className="lg:w-[200px] w-[100px] lg:mr-12 mr-4 lg:h-[150px] h-[50px]" alt="" />
