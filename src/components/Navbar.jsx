@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../routes/ContextProvider";
 import { Tooltip } from 'react-tooltip';
+import logo from "../../public/logo.png"
 // import logo from "../../public/logo.png"
 
 
@@ -53,7 +54,7 @@ const Navbar = () => {
                 </ul>
                 </div>
                 
-                <Link to="/" className="btn btn-ghost text-xl flex items-center text-center "> Wilds Tour</Link>
+                <Link to="/" className=" text-xl h-[60px] w-[200px] flex items-center text-center "> <img className="" src={logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -65,7 +66,7 @@ const Navbar = () => {
             <div className="navbar-end gap-2">
 
                 <div>
-                <label className="swap swap-rotate">
+                <label className="swap  swap-rotate">
   
                 
                     <input type="checkbox" onChange={handleToggle} />
@@ -83,9 +84,9 @@ const Navbar = () => {
                 {
                     user ? <div className="dropdown dropdown-end">
 
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                          <div className="w-10 rounded-full">
-                          <img data-tooltip-id="my-tooltip" alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                        <div tabIndex={0} role="button" className="btn  btn-ghost btn-circle avatar">
+                          <div className="w-10 rounded-full ">
+                          <img data-tooltip-id="my-tooltip"  alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                           <Tooltip
                             className="z-10"
                                 id="my-tooltip"

@@ -50,7 +50,7 @@ const AddSpots = () => {
 
     return (
         <div className=" lg:max-w-[1240px] mx-auto md:px-5 px-3">
-            <div className="lg:my-10 lg:px-24 md:my-8 my-5 px-3 py-2 md:shadow-xl md:px-16 bg-[#67C6E3] md:py-4 lg:py-6 ">
+            <div className="lg:my-10 lg:px-24 md:my-8 my-5 px-3 py-2 md:shadow-xl md:px-16 bg-gray-200 md:py-4 lg:py-6 ">
                 
                 <form onSubmit={handleAddSpot}>
                     <div className="flex gap-1 lg:gap-3 ">
@@ -160,7 +160,7 @@ const AddSpots = () => {
                     <div >
                         <div className="w-full mt-3">
                        
-                        <input type="submit" className="btn w-full" value="Add Tourist Spot" />
+                        <input type="submit" className="btn bg-[#5356FF] text-white w-full" value="Add Tourist Spot" />
                         </div>
                        
                     </div>

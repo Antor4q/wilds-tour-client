@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Banner";
 import TouristsSpots from "../../components/TouristsSpots";
 import Destinations from "../../components/Destinations";
+import Partners from "../Partners/Partners";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <div >
             
             <Banner></Banner>
+            <Partners></Partners>
             <div className="lg:max-w-[1240px] mx-auto mt-10 lg:mt-20 ">
                 <Destinations></Destinations>
             </div>

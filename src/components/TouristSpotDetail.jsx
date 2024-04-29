@@ -1,19 +1,19 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import pic1 from "../../public/pic3.jpg"
+
 
 const TouristSpotDetail = () => {
     const touristSpots = useLoaderData()
     const spotId = useParams()
     const touristSpot = touristSpots.find(spot => spot._id === spotId.id)
-   const {tourists_spot_name,shortDescription,average_cost,location,totalVisitorsPerYear,travel_time,seasonality,countryName,user_email,user_name} = touristSpot
+   const {tourists_spot_name,shortDescription,average_cost,location,totalVisitorsPerYear,travel_time,seasonality,countryName,image,user_email,user_name} = touristSpot
     return (
-        <div className="lg:h-[calc(100vh-340px)]  lg:max-w-[1240px] mx-auto">
+        <div className=" lg:max-w-[1240px] mx-auto">
             <div className="p-5 mx-auto sm:p-10 md:p-16  text-gray-100">
                 <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
                 <p className="text-black bg-gray-200 lg:w-1/3 w-2/3 px-4">{user_email}</p>
                     <div className="relative">
                        
-                    <img  src={pic1} alt="" className="w-full h-60 transition duration-200 hover:scale-110 sm:h-96 bg-gray-500" />
+                    <img  src={image} alt="" className="w-full h-60 transition duration-200 hover:scale-110 sm:h-96 bg-gray-500" />
                     <div className="hero-overlay bg-opacity-40"></div>
                     <p className="absolute text-white text-2xl font-bold top-[70%] left-[40%]">{location}</p>
                     </div>

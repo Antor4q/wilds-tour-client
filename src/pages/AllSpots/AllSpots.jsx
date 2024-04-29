@@ -5,18 +5,19 @@ import { useState } from "react";
 const AllSpots = () => {
     const allSpots = useLoaderData()
     const [spots,setSpots] = useState(allSpots)
+    const [newSpots,setNewSpots] = useState(spots)
     const [loading,setLoading] = useState(true)
     console.log(spots)
    
     const handleSort = e => {
         if(e === "costa"){
-            const remaining = spots.sort((a,b)=> a.average_cost.slice(0,3) - b.average_cost.slice(0,3) )
-            setSpots(remaining)
+            const remaining = [...spots].sort((a,b)=> a.average_cost.slice(0,3) - b.average_cost.slice(0,3) )
+            setNewSpots(remaining)
             setLoading(false)
         }
         if(e === "costD"){
-            const remaining = spots.sort((a,b)=> b.average_cost.slice(0,3) - a.average_cost.slice(0,3) )
-            setSpots(remaining)
+            const remaining = [...spots].sort((a,b)=> b.average_cost.slice(0,3) - a.average_cost.slice(0,3) )
+            setNewSpots(remaining)
             setLoading(false)
         }
     }
@@ -33,7 +34,7 @@ const AllSpots = () => {
             </div>
            <div className="grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
            {
-                spots.map(spot => <SingleSpot key={spot._id} spot={spot}></SingleSpot>)
+                newSpots.map(spot => <SingleSpot key={spot._id} spot={spot}></SingleSpot>)
             }
            </div>
         </div>
