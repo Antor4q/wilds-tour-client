@@ -3,6 +3,7 @@ import Banner from "../../components/Banner";
 import TouristsSpots from "../../components/TouristsSpots";
 import Destinations from "../../components/Destinations";
 import Partners from "../Partners/Partners";
+import CountryCards from "../CountryCards/CountryCards";
 
 
 const Home = () => {
@@ -23,6 +24,10 @@ const Home = () => {
                     touristSpots.slice(0,6).map(spot => <TouristsSpots key={spot._id} spot={spot}></TouristsSpots>
                 )
                 }
+               </div>
+               <div className="lg:max-w-[1240px] mx-auto my-10 lg:my-20">
+                    <h2 className="text-3xl font-bold lg:mb-10 mb-5 text-center">Country`s</h2>
+                    <CountryCards></CountryCards>
                </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { IoLocationOutline } from "react-icons/io5";
 
 const TouristsSpots = ({spot}) => {
 
@@ -14,7 +15,7 @@ const TouristsSpots = ({spot}) => {
                <figure ><img src={image} className="rounded-t-xl lg:h-[265px] w-full transition duration-200 hover:scale-110" alt="Shoes" />
                    
                    </figure> 
-                   <p className="absolute bottom-4 text-white text-xl font-semibold left-4">{location}</p>
+                   <p className="absolute bottom-4 text-white text-xl font-semibold left-4 items-center gap-3 flex"><IoLocationOutline /> {location}</p>
                </div>
                
                 <div className="card-body">
@@ -22,7 +23,11 @@ const TouristsSpots = ({spot}) => {
                     <p className=" text-base">{shortDescription.slice(0,50)}</p>
                     <p><span className="font-semibold text-xl">{average_cost} </span> Average cost</p>
                     <div className="card-actions ">
-                    <Link to={`/touristSpotDetail/${_id}`} className="btn bg-[#5356FF] text-white">View Details</Link>
+                   
+                    <Link to={`/touristSpotDetail/${_id}`} className="btn relative inline-flex items-center justify-start overflow-hidden font-medium    transition-all bg-indigo-100 rounded-xl hover:bg-white group py-1.5 px-2.5">
+                        <span className="w-56 h-48 rounded-xl bg-indigo-600 absolute bottom-0 left-0 translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                        <span className="relative w-full text-left text-indigo-600 transition-colors duration-300 ease-in-out group-hover:text-white">View Details</span>
+                    </Link>
                     </div>
                 </div>
                 </div>
