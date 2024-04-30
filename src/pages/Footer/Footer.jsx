@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
     return (
-        <div className="  bg-[#5356FF]">
+        <div className="  bg-[#070F2B]">
             <div className="lg:max-w-[1240px] mx-auto lg:h-[300px]  ">
             <footer className="px-4 divide-y  text-white">
                 <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -53,7 +53,7 @@ const Footer = () => {
                                    wildsTour@gmail.com
                                 </li>
                                 <li>
-                                    +991245345
+                                    +99124534543
                                 </li>
                             </ul>
                         </div>

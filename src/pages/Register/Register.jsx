@@ -28,28 +28,25 @@ const Register = () => {
           return  setError("Password must at least 6 character")
         }
         
-        console.log(error)
+       
         signUp(email, password)
         .then(result => {
             form.reset()
-          profileUpdate(name, photo)
-            .then((result) => {
-                console.log(result)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-           logOut()
-           .then()
-           .catch()
-           Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "You have successfully Register",
-            showConfirmButton: false,
-            timer: 1500
-        });
-        console.log(result.user)
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "You have successfully Register",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            console.log(result.user)
+            profileUpdate(name, photo)
+              .then(() => {
+                })
+            logOut()
+              
+          
+        
 
         })
         .catch(error => {

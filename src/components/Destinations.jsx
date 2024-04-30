@@ -25,7 +25,7 @@ const Destinations = () => {
 
 						<span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">  Ha Long Bay</span>
 				</a>
-		      
+    
            
 
             

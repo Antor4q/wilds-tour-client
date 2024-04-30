@@ -6,15 +6,23 @@ import Review from "./Review";
 
 const WhyChoos = () => {
     const [reviews,setReviews] = useState([])
+    const [loading,setLoading] = useState(true)
     useEffect(()=>{
         fetch("/review.json")
         .then(res => res.json())
         .then(data => {
             console.log(data)
             setReviews(data)
+            setLoading(false)
         })
     },[])
-
+    if(loading){
+        return <>
+        <div className="lg:h-[calc(100vh-376px)] h-[calc(100vh-597px)] md:h-[calc(100vh-465px)] lg:max-w-[1440px] mx-auto flex justify-center">
+                <span className="loading loading-bars loading-lg"></span>
+            </div>
+        </>
+    }
     return (
         <section className=" ">
             <div className="container flex flex-col justify-center p-6 mx-auto  lg:flex-row ">
@@ -45,13 +53,13 @@ const WhyChoos = () => {
                    </ul>
                 </div>
             </div>
-            <div className="mt-4 relative">
+            <div className="mt-4 relative lg:px-0 px-7">
                 <Marquee>
                     {
                         reviews.map(review => <Review key={review.id} review={review}></Review>)
                     }
                 </Marquee>
-                <h2 className="absolute top-3 left-0 z-10 bg-gray-400 text-white p-4 rounded-xl  font-semibold text-xl lg:text-2xl">What Our Client Say</h2>
+                <h2 className="absolute left-6 -top-2 lg:top-3 lg:left-0 z-10 bg-gray-400 text-white p-4 rounded-xl  font-semibold text-xl lg:text-2xl">What Our Client Say</h2>
             </div>
         </section>
         

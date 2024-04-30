@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../routes/ContextProvider";
 import { FcGoogle } from "react-icons/fc";
 import { SiGithub } from "react-icons/si";
@@ -10,6 +10,8 @@ import { LuEye, LuEyeOff } from "react-icons/lu";
 const Login = () => {
     const {signIn,googleLogin,githubLogin} = useContext(AuthContext)
     const [showPassword,setShowPassword] = useState(false)
+    const location = useLocation()
+    const navigate = useNavigate()
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target;
@@ -26,6 +28,9 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
             });
+            setTimeout(()=>{
+                navigate(location?.state ? location.state : "/")
+            },500)
         })
         .catch(error => {
             console.log(error)

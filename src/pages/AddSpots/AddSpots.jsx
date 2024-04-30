@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../routes/ContextProvider";
 import Swal from "sweetalert2";
 
@@ -10,8 +10,15 @@ const AddSpots = () => {
     const name = user?.displayName || ""
     const email = user?.email || ""
     console.log(user)
-   
+    const [seasonality,setSeasonality] = useState("")
+   const [countryName,setCountryName] = useState("")
   
+   const handleCountry = e => {
+    setCountryName(e.target.value)
+   }
+   const handleSeason = e => {
+    setSeasonality(e.target.value)
+   }
 
     const handleAddSpot = (e) => {
        
@@ -24,8 +31,8 @@ const AddSpots = () => {
         const shortDescription = form.description.value;
         const average_cost = form.cost.value;
         const totalVisitorsPerYear = form.visitor.value;
-        const seasonality = form.season.value
-        const countryName = form.country.value;
+        
+      
         const user_name = name
         const user_email = email
         const travel_time = form.time.value;
@@ -103,21 +110,8 @@ const AddSpots = () => {
                         <input type="text" placeholder="Total Visitors" name="visitor" className="input w-full input-bordered" required />
                         </div>
                     </div>
-                    <div className="lg:flex gap-3 ">
-                        <div className="w-full">
-                        <label className="label">
-                            <span className="label-text">Country Name</span>
-                        </label>
-                        <input  type="text" placeholder="Country Name" name="country" className="input w-full input-bordered" required />
-                        </div>
-                        <div className="w-full">
-                        <label className="label">
-                            <span className="label-text">Seasonality</span>
-                        </label>
-                        <input type="text" placeholder="Season" name="season" className="input w-full input-bordered" required />
-                        </div>
-                    </div>
-                     {/* <div className="flex gap-3 lg:mt-3">
+                   
+                     <div className="flex gap-3 lg:mt-3">
                         <div className="w-full ">
                             <select onChange={handleCountry} value={countryName} className="select select-bordered w-full  ">
                             <option disabled selected value={""}>Select Country</option>
@@ -134,10 +128,11 @@ const AddSpots = () => {
                             <option disabled selected value={""}>Seasonality</option>
                             <option value={"Winter"}>Winter</option>
                             <option value={"Summer"}>Summer</option>
+                            <option value={"Spring"}>Spring</option>
                             </select>
                         </div>
                        
-                     </div> */}
+                     </div>
                     <div >
                         <div className="w-full">
                         <label className="label">

@@ -34,7 +34,7 @@ const Home = () => {
                 <h2 className="text-xl lg:text-2xl font-bold text-center">Why Choose Us</h2>
                     <WhyChoos></WhyChoos>
                </div>
-               <div className="lg:max-w-[1240px] mx-auto">
+               <div className="lg:max-w-[1240px] px-6 lg:px-0 mx-auto">
                <Partners></Partners>
                </div>
             </div>

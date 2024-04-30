@@ -4,13 +4,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import slide1 from "../../public/slide1.webp"
 import slide2 from "../../public/slide2.webp"
-import slide3 from "../../public/slide3.webp"
+import slide3 from "../../public/pic3.jpg"
 import { Typewriter } from 'react-simple-typewriter'
 import { Fade } from "react-awesome-reveal";
 
 import './styles.css';
 
-// import required modules
+
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Banner = () => {

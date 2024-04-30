@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link,  useParams } from "react-router-dom";
 
-// import { useParams } from "react-router-dom";
+
 const CountrySpots = () => {
     
     const country = useParams()
     const [data,setData] = useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:4000/countryData/${country.countryName}`)
+        fetch(`https://wilds-tour-server.vercel.app/countryData/${country.countryName}`)
         .then(res => res.json())
         .then(dat => {
             setData(dat)

@@ -17,6 +17,7 @@ import Error from './pages/Error/Error';
 import ContextProvider from './routes/ContextProvider';
 import TouristSpotDetail from './components/TouristSpotDetail';
 import CountrySpots from './pages/CountrySpots/CountrySpots';
+import PrivateRoute from './routes/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -32,27 +33,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/touristSpotDetail/:id",
-        element:<TouristSpotDetail></TouristSpotDetail>,
+        element:<PrivateRoute><TouristSpotDetail></TouristSpotDetail></PrivateRoute>,
       
         loader: ()=> fetch("https://wilds-tour-server.vercel.app/touristSpots")
       },
       {
         path: "/allSpots",
         element: <AllSpots></AllSpots>,
-        loader: ()=> fetch("https://wilds-tour-server.vercel.app/touristSpots")
+      
       },
       {
         path: "/addSpots",
-        element: <AddSpots></AddSpots>
+        element: <PrivateRoute><AddSpots></AddSpots></PrivateRoute>
       },
       {
         path: "/myList",
-        element: <MyList></MyList>,
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
        
       },
       {
         path: "/countryData/:countryName",
-        element: <CountrySpots></CountrySpots>,
+        element:<PrivateRoute> <CountrySpots></CountrySpots></PrivateRoute>,
       
       },
       {

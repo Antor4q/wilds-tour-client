@@ -1,22 +1,38 @@
-import { useLoaderData } from "react-router-dom";
+
 import SingleSpot from "../SingleSpot/SingleSpot";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AllSpots = () => {
-    const allSpots = useLoaderData()
-    const [spots,setSpots] = useState(allSpots)
-    const [newSpots,setNewSpots] = useState(spots)
-    const [loading,setLoading] = useState(true)
-    console.log(spots)
    
+    const [newSpots,setNewSpots] = useState([])
+    const [loading,setLoading] = useState(true)
+   
+
+    useEffect(()=>{
+        fetch("https://wilds-tour-server.vercel.app/touristSpots")
+        .then(res => res.json())
+        .then(data => {
+            setNewSpots(data)
+           setLoading(false)
+           console.log(data)
+        })
+    },[])
+    if(loading){
+        return <>
+        <div className="lg:h-[calc(100vh-376px)] h-[calc(100vh-597px)] md:h-[calc(100vh-465px)] lg:max-w-[1440px] mx-auto flex justify-center">
+                <span className="loading loading-bars loading-lg"></span>
+            </div>
+        </>
+    }
+  
     const handleSort = e => {
         if(e === "costa"){
-            const remaining = [...spots].sort((a,b)=> a.average_cost.slice(0,3) - b.average_cost.slice(0,3) )
+            const remaining = [...newSpots].sort((a,b)=> a.average_cost.slice(0,3) - b.average_cost.slice(0,3) )
             setNewSpots(remaining)
             setLoading(false)
         }
         if(e === "costD"){
-            const remaining = [...spots].sort((a,b)=> b.average_cost.slice(0,3) - a.average_cost.slice(0,3) )
+            const remaining = [...newSpots].sort((a,b)=> b.average_cost.slice(0,3) - a.average_cost.slice(0,3) )
             setNewSpots(remaining)
             setLoading(false)
         }
