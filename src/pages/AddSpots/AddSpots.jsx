@@ -64,7 +64,7 @@ const AddSpots = () => {
 
 
     return (
-        <div className=" lg:max-w-[1240px] lg:h-[calc(100vh-376px)] mx-auto md:px-5 px-3">
+        <div className=" lg:max-w-[1240px]  mx-auto md:px-5 px-3">
             <div className="lg:my-10 lg:px-24 md:my-8 my-5 px-3 py-2 hover:shadow-xl  md:px-16 bg-gray-200 md:py-4 lg:py-6 ">
                 
                 <form onSubmit={handleAddSpot}>
