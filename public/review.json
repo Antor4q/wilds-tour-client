@@ -1,0 +1,44 @@
+[
+    {
+    "id":1,
+    "name": "Emily",
+    "image": "https://i.ibb.co/GnPzNVB/beautiful-smiling-girl-260nw-151159397.webp",
+    "rating": 5,
+    "comment": "Absolutely loved my experience with Wilds Tour! The guides were knowledgeable and friendly, and the itinerary was perfect for exploring the wilderness. Can't wait to book another adventure!"
+    },
+    {
+    "id" :2,
+    "name": "Michael",
+    "image": "https://i.ibb.co/8sp9Jf1/images-3.jpg",
+    "rating": 4,
+    "comment": "Had an amazing time on the wildlife safari organized by Wilds Tour. Saw some incredible animals and the guide provided interesting insights. Only wish there was more time at each stop."
+    },
+    {
+        "id":3,
+    "name": "Sarah",
+    "image": "https://i.ibb.co/h1wTNs5/pretty-smiling-joyfully-female-fair-260nw-776697943.webp",
+    "rating": 5,
+    "comment": "Wilds Tour exceeded my expectations! The hiking trails were breathtaking, and the accommodations were comfortable. Highly recommend for nature lovers!"
+    },
+    {
+        "id":4,
+    "name": "David",
+    "image": "https://i.ibb.co/y6QMkJF/Outdoors-man-portrait-cropped.jpg",
+    "rating": 3,
+    "comment": "Overall, a good experience with Wilds Tour. The activities were enjoyable, but there were some logistical hiccups along the way that could be improved."
+    },
+    {
+        "id":5,
+    "name": "Jessica",
+    "image": "https://i.ibb.co/R3Z54Dv/portrait-2865605-640.jpg",
+    "rating": 5,
+    "comment": "Wilds Tour provided an unforgettable adventure! From kayaking to bird watching, every moment was filled with excitement. Fantastic guides and great organization!"
+    },
+    {
+        "id":6,
+    "name": "Alex",
+    "image": "https://i.ibb.co/1vp5N2b/young-male-posing-isolated-against-blank-studio-wall-273609-12356.jpg",
+    "rating": 4,
+    "comment": "Enjoyed the diversity of activities offered by Wilds Tour. The jungle trekking was particularly memorable. However, communication about schedule changes could have been clearer."
+    }
+    ]

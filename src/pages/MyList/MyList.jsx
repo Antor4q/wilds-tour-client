@@ -55,8 +55,8 @@ const MyList = () => {
     return (
         <div className="lg:max-w-[1240px]  max-w-[390px] px-3  mx-auto">
            <div className="lg:py-10">
-           <div className="overflow-x-auto w-full lg:w-2/3 lg:p-10 mx-auto mt-10 bg-gray-200 lg:mt-20">
-           <table className="table">
+           <div className="overflow-x-auto w-full lg:w-2/3 lg:p-10 mx-auto my-10 bg-gray-200 lg:my-20">
+           <table className="table w-[80%] text-sm">
             {/* head */}
             <thead>
             <tr>

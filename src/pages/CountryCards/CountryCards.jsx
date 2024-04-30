@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import CountryCard from "./CountryCard";
 
 
 const CountryCards = () => {
@@ -15,24 +16,9 @@ const CountryCards = () => {
     },[])
    
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+        <div className="grid lg:grid-cols-3 px-5 lg:px-0 md:grid-cols-2 grid-cols-1 gap-5">
            {
-            country.map(cou => <>
-                
-                <Link className="card bg-base-100 border transition duration-200 hover:scale-110 lg:h-[435px] hover:shadow-xl">
-                    <figure className="px-5 pt-5">
-                        <img src={cou.image}  alt="Shoes" className="rounded-xl  lg:w-[365px] lg:h-[195px]" />
-                    </figure>
-                    <div className="card-body ">
-                        <h2 className="card-title">{cou.countryName}</h2>
-                        <p className="">{cou.short_description}</p>
-                        <div className="card-actions">
-                        
-                        </div>
-                    </div>
-                    </Link>
-               
-            </>)
+            country.map(cou => <CountryCard key={cou._id} cou={cou}></CountryCard>)
            }
         </div>
     );

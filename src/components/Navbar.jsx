@@ -36,6 +36,7 @@ const Navbar = () => {
             <li><NavLink to="/allSpots" className="hover:underline">All Tourists Spot</NavLink></li>
             <li><NavLink to="/addSpots" className="hover:underline">Add Tourists Spot</NavLink></li>
             <li><NavLink to="/myList" className="hover:underline">My List</NavLink></li>
+           
     
     </>
     

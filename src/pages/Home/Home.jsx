@@ -4,6 +4,7 @@ import TouristsSpots from "../../components/TouristsSpots";
 import Destinations from "../../components/Destinations";
 import Partners from "../Partners/Partners";
 import CountryCards from "../CountryCards/CountryCards";
+import WhyChoos from "../../components/WhyChoos";
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
         <div >
             
             <Banner></Banner>
-            <Partners></Partners>
+            
             <div className="lg:max-w-[1240px] mx-auto mt-10 lg:mt-20 ">
                 <Destinations></Destinations>
             </div>
@@ -28,6 +29,13 @@ const Home = () => {
                <div className="lg:max-w-[1240px] mx-auto my-10 lg:my-20">
                     <h2 className="text-3xl font-bold lg:mb-10 mb-5 text-center">Country`s</h2>
                     <CountryCards></CountryCards>
+               </div>
+               <div className="lg:max-w-[1240px] mx-auto my-10 lg:my-20">
+                <h2 className="text-xl lg:text-2xl font-bold text-center">Why Choose Us</h2>
+                    <WhyChoos></WhyChoos>
+               </div>
+               <div className="lg:max-w-[1240px] mx-auto">
+               <Partners></Partners>
                </div>
             </div>
         </div>

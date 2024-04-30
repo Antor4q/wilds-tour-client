@@ -16,6 +16,8 @@ import Register from './pages/Register/Register';
 import Error from './pages/Error/Error';
 import ContextProvider from './routes/ContextProvider';
 import TouristSpotDetail from './components/TouristSpotDetail';
+import CountrySpots from './pages/CountrySpots/CountrySpots';
+
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,11 @@ const router = createBrowserRouter([
         path: "/myList",
         element: <MyList></MyList>,
        
+      },
+      {
+        path: "/countryData/:countryName",
+        element: <CountrySpots></CountrySpots>,
+      
       },
       {
         path: "/login",
